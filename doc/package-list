@@ -1,0 +1,5 @@
+com.xebia.mowitnow.application
+com.xebia.mowitnow.application.exception
+com.xebia.mowitnow.application.model
+com.xebia.mowitnow.application.use_case
+com.xebia.mowitnow.application.utils

@@ -129,7 +129,7 @@ public class File {
 	 * @throws IncorectFormatMaximalCoordinatesException
 	 * @throws IncorrectFileException
 	 */
-	public static Coordinates getCoordinatesMax(Path path) throws  IncorectFormatMaximalCoordinatesException, IncorrectFileException {
+	public static Coordinates getGroundMaxCoordinates(Path path) throws  IncorectFormatMaximalCoordinatesException, IncorrectFileException {
 
       try (final BufferedReader reader = Files.newBufferedReader(
     		  path, Charset.forName("UTF-8"))) {

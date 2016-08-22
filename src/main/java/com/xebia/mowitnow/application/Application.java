@@ -57,7 +57,7 @@ public class Application {
 
 			final Path path = applicationParameters.getPath();
 
-			final Coordinates coordinatesMax = File.getCoordinatesMax(path);
+			final Coordinates coordinatesMax = File.getGroundMaxCoordinates(path);
 			List<Mower> mowers = mowerService.getMowersFromFile(path);
 			mowerService.realizeInstructionsAll(mowers, coordinatesMax);
 			mowerService.getAllLocalisations(mowers);
@@ -86,19 +86,14 @@ public class Application {
 	}
 
 	private static void logStart() {
-		LOGGER.info("Traitement débuté");
+		LOGGER.info("Application Start");
 	}
 
 	private static void logFin() {
-		LOGGER.info("Traitement terminé");
+		LOGGER.info("Application End");
 	}
 
-	/**
-	 * 
-	 * Log les erreurs de l'application.
-	 * 
-	 * @param e
-	 */
+	
 	private static void logError(Exception e) {
 		String emessage = e.getMessage();
 		if (e.getCause() != null) {

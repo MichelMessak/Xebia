@@ -21,6 +21,21 @@ public class FileTest extends SetupTest {
 		super.setUp();
 	}
 	
+
+	/**
+	 * 
+	 * Test getCoordinatesMax method.
+	 * 
+	 * @throws IncorrectFileException 
+	 * @throws IncorectFormatMaximalCoordinatesException 
+	 * 
+	 */
+	@Test
+	public void getGroundMaxCoordinatesTest() throws IncorectFormatMaximalCoordinatesException, IncorrectFileException{
+		Coordinates coordinatesFromFile = File.getGroundMaxCoordinates(path);
+		assertEquals(coordinatesFromFile, coordinatesMax);
+	}
+	
 	/**
 	 * Test getMowerList method.
 	 * 
@@ -28,10 +43,9 @@ public class FileTest extends SetupTest {
 	 * @throws IncorectFormatInstructionException
 	 * @throws IncorrectFileException
 	 * @throws IncorectFormatMaximalCoordinatesException
-	 */
+	 */	
 	@Test
-	public void getMowerListTest () throws IncorectFormatCoordinatesOrientationException, IncorectFormatInstructionException, IncorrectFileException, IncorectFormatMaximalCoordinatesException {
-		
+	public void getMowerListTest () throws IncorectFormatCoordinatesOrientationException, IncorectFormatInstructionException, IncorrectFileException, IncorectFormatMaximalCoordinatesException{
 		List <Mower> mowers = File.getMowerList(path);
 		
 		assertEquals(mowers.size(), 2);
@@ -47,19 +61,6 @@ public class FileTest extends SetupTest {
 		assertEquals(Orientation.E, mower.getOrientation());
 		assertEquals(new Coordinates(3,3), mower.getCoordinates());
 		assertEquals(setInstructionMower2(), mower.getInstructions());
-	}
-
-	/**
-	 * Test getCoordinatesMax method.
-	 * 
-	 * @throws IncorectFormatMaximalCoordinatesException
-	 * @throws IncorrectFileException
-	 */
-	@Test
-	public void getCoordinatesMax() throws IncorectFormatMaximalCoordinatesException, IncorrectFileException{
-		
-		Coordinates coordinatesFromFile = File.getCoordinatesMax(path);
-		assertEquals(coordinatesFromFile, coordinatesMax);
 	}
 
 }
